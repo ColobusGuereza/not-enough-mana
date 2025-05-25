@@ -36,7 +36,28 @@ const decrement = (type: 'health' | 'mana') => {
   </div>
 </template>
 
+<style>
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+</style>
+
+
 <style scoped>
+
+:global(body, html, #app) {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrolling */
+}
+
 .split-container {
   display: flex;
   height: 100vh;
@@ -50,21 +71,30 @@ const decrement = (type: 'health' | 'mana') => {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 2em 0;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
 }
 
 .health-panel {
-  background: linear-gradient(to bottom, #ffb6c1, #ff4d4d); /* rose to red */
+  background: linear-gradient(to bottom, #FFB6C1, #FF4D4D); /* rose to red */
 }
 
 .mana-panel {
-  background: linear-gradient(to bottom, #b3e0ff, #298893); /* light blue to blue */
+  background: linear-gradient(to bottom, #B3E0FF, #298893); /* light blue to blue */
+}
+
+@media (max-width: 600px) {
+  .split-container {
+    flex-direction: column;
+  }
 }
 
 .icon {
   height: 6em;
   width: 6em;
   margin-top: 1em;
+  margin-bottom: 1.5em;
   object-fit: contain;
 }
 
@@ -98,6 +128,7 @@ const decrement = (type: 'health' | 'mana') => {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1em;
 }
 
 
