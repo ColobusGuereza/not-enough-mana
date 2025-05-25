@@ -84,12 +84,6 @@ const decrement = (type: 'health' | 'mana') => {
   background: linear-gradient(to bottom, #B3E0FF, #298893); /* light blue to blue */
 }
 
-@media (max-width: 600px) {
-  .split-container {
-    flex-direction: column;
-  }
-}
-
 .icon {
   height: 6em;
   width: 6em;
