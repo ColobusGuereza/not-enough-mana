@@ -4,9 +4,9 @@ import {ref} from 'vue'
 const health = ref(10);
 const mana = ref(10);
 const increment = (type: 'health' | 'mana') => {
-  if (type === 'health' && health.value < 10) {
+  if (type === 'health') {
     health.value++;
-  } else if (type === 'mana' && mana.value < 10) {
+  } else if (type === 'mana') {
     mana.value++;
   }
 };
